@@ -1,1 +1,16 @@
-/*This file is for your custom css.  All yours*/
+#full-detail {
+  display: none;
+}
+
+.task {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.task:hover {
+  text-decoration: underline;
+}
+
+.checkbox {
+  float: left;
+}
