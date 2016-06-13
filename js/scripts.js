@@ -5,9 +5,6 @@ function Task(task, notes, date, completed) {
   this.completed = false;
 }
 
-Task.prototype.markCompleted = function(task) {
-  this.completed = true;
-}
 
 $(document).ready(function(){
 
@@ -21,19 +18,10 @@ $(document).ready(function(){
 
     var output = new Task(task, notes, date, completed);
 
-    $("div#output ul").append("<li><span class='task " + output.task + "'>" + output.task + "</span></li>");
+    $("div#output ul").append("<li class='task'><h2>Task: " + output.task + "</h2><p>Notes: " + output.notes + "</p><p>Date: " + output.date + "</p></li>");
 
-    $(".task").last().click(function() {
-    $("#full-detail").show();
-    $("#full-detail h2").text(output.task);
-    $(".notes").text(output.notes);
-    $(".date").text(output.date);
-    });
-
-    $("#full-detail h2").click(function () {
-      $("#full-detail").hide();
-      $("li." + output.task).remove();
-
+    $(".task").click(function () {
+      this.remove();
     })
   });
 });
