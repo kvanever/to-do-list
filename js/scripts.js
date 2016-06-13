@@ -1,4 +1,4 @@
-function Task(task, notes, date, completed) {
+function Task(task, notes, date) {
   this.task = task;
   this.notes = notes;
   this.date = date;
